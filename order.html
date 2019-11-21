@@ -30,15 +30,15 @@
                 ,data : {
                   product:  [ { 
                                 name: '炸鸡'
-                                ,quatity: 0
+                                ,quantity: 0
                                ,price: 19.5 }
                              ,
                              { name: '可乐'
-                             ,quatity: 0
+                             ,quantity: 0
                             ,price: 3 }
                             ,
                             { name: '薯条'
-                               ,quatity: 0
+                               ,quantity: 0
                                ,price: 3.5 }
                    ]
                 }
@@ -46,13 +46,13 @@
                     inc(event){
                         // event -> target -> dataset -> data- (pid)
                         var click_idx = event.target.dataset.pid;
-                        this.product[click_idx].quatity++
-                        //this.quatity++
+                        this.product[click_idx].quantity++
+                        //this.quantity++
                     },
                     dec(event){
                         var pid = event.target.dataset.pid;
                         var p = this.product[pid]
-                        p.quatity = p.quatity > 0 ? p.quatity - 1: 0
+                        p.quantity = p.quatity > 0 ? p.quantity - 1: 0
                         //this.quatity = this.quatity > 0 ? this.quatity - 1 : 0;
                     }
                 }
@@ -62,7 +62,7 @@
                         var total = 0;
                         for(var i = 0 ; i < this.product.length; i++){
                             var p = this.product[i];
-                            total += p.price * p.quatity
+                            total += p.price * p.quantity
                         }
 
                         return total
